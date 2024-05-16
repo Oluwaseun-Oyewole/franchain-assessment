@@ -1,7 +1,11 @@
-import React from "react";
+import { Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
-  return <div>DashboardLayout</div>;
+  return (
+    <main className="max-w-[1300px] mx-auto">
+      <Outlet />
+    </main>
+  );
 };
 
 export default DashboardLayout;

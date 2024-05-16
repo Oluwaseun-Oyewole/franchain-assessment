@@ -1,3 +1,4 @@
+import LeftComponent from "@/components/custom/left";
 import React from "react";
 import { Outlet } from "react-router-dom";
 // import Navigation from "../../components/nav";
@@ -10,7 +11,10 @@ const AuthLayout = () => {
           <Navigation />
         </header> */}
         <div className="max-w-[1300px] mx-auto">
-          <Outlet />
+          <div className="flex justify-between">
+            <LeftComponent />
+            <Outlet />
+          </div>
         </div>
       </main>
     </React.Fragment>

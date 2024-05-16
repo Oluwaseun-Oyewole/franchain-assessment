@@ -14,7 +14,7 @@ const routes = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/auth",
+    path: Routes.auth,
     element: (
       <RouteProtection redirect={Routes.dashboard} validations={[]}>
         <AuthLayout />
@@ -23,7 +23,7 @@ const routes = createBrowserRouter([
     children: [...authenticationRoutes()],
   },
   {
-    path: "/dashboard",
+    path: Routes.dashboard,
     element: (
       <RouteProtection redirect={Routes.login} validations={[]}>
         <DashboardLayout />

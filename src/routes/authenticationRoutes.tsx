@@ -1,10 +1,12 @@
-import React, { lazy } from "react";
 import { Navigate, RouteObject } from "react-router-dom";
+import {
+  AccountVerification,
+  Login,
+  PasswordReset,
+  PasswordResetConfirmation,
+  SignUp,
+} from "./lazy";
 import { Routes } from "./routes";
-
-const Login = lazy(() => import("../views/auth/login"));
-const SignUp = lazy(() => import("../views/auth/signUp"));
-const PasswordReset = lazy(() => import("../views/auth/passwordReset"));
 
 export const authenticationRoutes = () => {
   return [
@@ -22,6 +24,15 @@ export const authenticationRoutes = () => {
       element: <PasswordReset />,
     },
 
-    { path: "/auth", element: <Navigate to={Routes.login} replace /> },
+    {
+      path: Routes.accountVerification,
+      element: <AccountVerification />,
+    },
+
+    {
+      path: Routes.confirmPassword,
+      element: <PasswordResetConfirmation />,
+    },
+    { path: Routes.auth, element: <Navigate to={Routes.login} replace /> },
   ] as RouteObject[];
 };
