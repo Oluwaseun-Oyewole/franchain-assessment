@@ -9,6 +9,11 @@ export const enum Routes {
   accountVerification = "/auth/accountVerification",
   confirmPassword = "/auth/confirmPasswordReset",
 
+  // franchain
+  franchain = "/franchain",
+  franchainGoals = "/franchain/goals",
+  franchainInfo = "/franchain/info",
+
   // dashboard
   dashboard = "/dashboard",
 }

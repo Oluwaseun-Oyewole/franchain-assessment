@@ -23,7 +23,7 @@ const Login = () => {
   const handleSubmit = async (values: LoginFormValues, { resetForm }: any) => {
     try {
       resetForm();
-      navigate(Routes.dashboard);
+      navigate(Routes.franchainGoals);
     } catch (error) {
       return;
     }

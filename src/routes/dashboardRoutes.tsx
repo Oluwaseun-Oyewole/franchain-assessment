@@ -1,10 +1,7 @@
-import React, { lazy } from "react";
 import { Navigate, RouteObject } from "react-router-dom";
+import { Dashboard } from "./lazy";
 import { Routes } from "./routes";
 
-const Dashboard = lazy(() => import("../views/dashboard"));
-
-// all dashboard related routes
 export const dashboardRoutes = () => {
   return [
     {
@@ -12,6 +9,9 @@ export const dashboardRoutes = () => {
       element: <Dashboard />,
     },
 
-    { path: "/dashboard", element: <Navigate to={Routes.dashboard} replace /> },
+    {
+      path: Routes.dashboard,
+      element: <Navigate to={Routes.dashboard} replace />,
+    },
   ] as RouteObject[];
 };

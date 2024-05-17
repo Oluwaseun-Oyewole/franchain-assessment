@@ -4,7 +4,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Arrow from "../../../assets/arrow.svg";
 import Logo from "../../../assets/logo.svg";
 
-const Navigation = () => {
+type INav = {
+  showBg?: boolean;
+};
+const Navigation = ({ showBg = true }: INav) => {
   const location = useLocation();
   const getTitle = location.pathname.split("/");
   const getTitleEnum = getTitle[getTitle.length - 1];
@@ -19,8 +22,12 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="flex justify-between h-[100%] max-w-[85%] mx-auto lg:max-w-full ">
-      <div className="bg-light lg:bg-primary w-full flex justify-start items-center">
+    <nav className="flex justify-between h-[100%]">
+      <div
+        className={`bg-light ${
+          showBg && "lg:bg-primary"
+        } w-full flex justify-start items-center`}
+      >
         <img src={Logo} alt="logo image" className="w-[20px] lg:w-[28px]" />
       </div>
       <div className="w-full bg-light flex justify-end items-center">

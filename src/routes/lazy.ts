@@ -9,3 +9,8 @@ export const AccountVerification = lazy(
 export const PasswordResetConfirmation = lazy(
   () => import("../views/auth/confirmPassword")
 );
+export const Dashboard = lazy(() => import("../views/dashboard"));
+export const FranchainGoals = lazy(() => import("../views/franchain/goals"));
+export const FranchainInformation = lazy(
+  () => import("../views/franchain/info")
+);

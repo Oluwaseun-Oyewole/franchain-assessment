@@ -10,6 +10,8 @@ export const AuthTitle: AuthTitle = {
   confirmPasswordReset: "Return to login",
   passwordReset: "Return to login",
   accountVerification: "Go back",
+  info: "Skip to dashboard",
+  goals: "Skip to dashboard",
 };
 
 export const AuthLinks: AuthTitle = {
@@ -18,4 +20,6 @@ export const AuthLinks: AuthTitle = {
   confirmPasswordReset: Routes.login,
   passwordReset: Routes.login,
   accountVerification: Routes.accountVerification,
+  info: Routes.dashboard,
+  goals: Routes.dashboard,
 };
