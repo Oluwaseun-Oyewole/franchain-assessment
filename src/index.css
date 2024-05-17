@@ -68,6 +68,11 @@
   }
 }
 
+::-webkit-scrollbar {
+  background: transparent !important;
+  width: 0px !important;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -75,5 +80,6 @@
   body {
     @apply bg-background text-foreground;
     font-family: "DM Sans", sans-serif;
+    overflow-y: hidden;
   }
 }

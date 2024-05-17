@@ -6,7 +6,7 @@ import { forwardRef, useState } from "react";
 import { Input, InputProps } from "./input";
 
 const PasswordInput = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, name, ...props }, ref) => {
+  ({ className, name, label, ...props }, ref) => {
     const [showPassword, setShowPassword] = useState(false);
     const disabled =
       props.value === "" || props.value === undefined || props.disabled;
@@ -14,6 +14,7 @@ const PasswordInput = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="relative">
         <Input
+          label={label}
           name={name!}
           type={showPassword ? "text" : "password"}
           className={cn("hide-password-toggle pr-10", className)}
@@ -25,9 +26,8 @@ const PasswordInput = forwardRef<HTMLInputElement, InputProps>(
           type="button"
           variant="ghost"
           size="sm"
-          className="absolute right-0 top-0 h-full px-3 hover:bg-transparent !bg-transparent border-[1.7px] border-gray-300 !py-7 pl-12"
+          className="absolute right-0 top-4 h-full px-3 hover:bg-transparent !bg-transparent !text-dark border-0"
           onClick={() => setShowPassword((prev) => !prev)}
-          // disabled={disabled}
         >
           {showPassword && !disabled ? (
             <EyeIcon className="h-4 w-4" aria-hidden="true" />

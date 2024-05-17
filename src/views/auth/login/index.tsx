@@ -5,10 +5,11 @@ import { LoginFormValues, loginValidationSchema } from "@/lib/schema/login";
 import { Routes } from "@/routes/routes";
 import { Form, Formik } from "formik";
 import { Loader } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ZodError } from "zod";
 
 const Login = () => {
+  const navigate = useNavigate();
   const validateForm = (values: LoginFormValues) => {
     try {
       loginValidationSchema.parse(values);
@@ -21,67 +22,76 @@ const Login = () => {
 
   const handleSubmit = async (values: LoginFormValues, { resetForm }: any) => {
     try {
-      console.log("Trying to submit", values);
       resetForm();
+      navigate(Routes.dashboard);
     } catch (error) {
       return;
     }
   };
 
   return (
-    <div className="w-full">
-      <Typography type="h1" children="Login to Franchan" />
-      <Formik
-        initialValues={{
-          email: "",
-          password: "",
-        }}
-        validate={validateForm}
-        onSubmit={handleSubmit}
-      >
-        {(formik) => {
-          return (
-            <Form>
-              <div className={`flex flex-col w-full`}>
-                <FormikController
-                  id="Email"
-                  control="input"
-                  type="email"
-                  placeholder="email address"
-                  name="email"
-                  value={formik.values.email}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                />
+    <div className="mt-6 md:mt-0 md:mb-32 bg-light h-full w-full max-w-[85%] mx-auto flex flex-col items-start md:justify-center">
+      <Typography
+        children="Login to Franchain"
+        type="h1"
+        weight="medium"
+        variant="displayXs"
+      />
+      <div className="w-full py-4">
+        <Formik
+          initialValues={{
+            email: "",
+            password: "",
+          }}
+          validate={validateForm}
+          onSubmit={handleSubmit}
+          validateOnChange
+          validateOnMount
+        >
+          {(formik) => {
+            return (
+              <Form>
+                <div className={`flex flex-col w-full`}>
+                  <FormikController
+                    label="Email"
+                    control="input"
+                    type="email"
+                    name="email"
+                    value={formik.values.email}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                  />
 
-                <FormikController
-                  id="Password"
-                  control="password"
-                  name="password"
-                  value={formik.values.password}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  placeholder="password"
-                />
-              </div>
+                  <FormikController
+                    label="Password"
+                    control="password"
+                    name="password"
+                    value={formik.values.password}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                  />
+                </div>
 
-              <div className="w-full pb-5 font-[300] flex gap-1">
-                <p> Forgot your password?</p>
-                <Link to={Routes.passwordReset}>click here to reset</Link>
-              </div>
+                <div className="w-full pb-3 font-[300] flex gap-1 text-sm">
+                  <p> Forgot your password?</p>
+                  <Link to={Routes.passwordReset} className="underline">
+                    click here to reset
+                  </Link>
+                </div>
 
-              <Button
-                type="submit"
-                disabled={!formik.isValid}
-                className="pt-5 !disabled:cursor-not-allowed w-full py-6 transition-all ease-in-out duration-500 flex items-center gap-2"
-              >
-                {formik.isSubmitting && <Loader />}
-                login
-              </Button>
-            </Form>
-          );
-        }}
-      </Formik>
+                <Button
+                  type="submit"
+                  disabled={!formik.isValid}
+                  className="mt-3"
+                >
+                  {formik.isSubmitting && <Loader />}
+                  Log in
+                </Button>
+              </Form>
+            );
+          }}
+        </Formik>
+      </div>
     </div>
   );
 };

@@ -2,6 +2,11 @@
 
 const COLORS = {
   gray: "#B1B7D6",
+  primary: "#DFEAF0",
+  primary100: "#7D97FF",
+  light: "#F8F8FB",
+  dark: "#282828",
+  error: "#FF4E4E",
 };
 
 module.exports = {
