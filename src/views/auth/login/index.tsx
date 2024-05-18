@@ -20,7 +20,7 @@ const Login = () => {
     }
   };
 
-  const handleSubmit = async ({ resetForm }: any) => {
+  const handleSubmit = async (_: LoginFormValues, { resetForm }: any) => {
     try {
       resetForm();
       navigate(Routes.dashboard);

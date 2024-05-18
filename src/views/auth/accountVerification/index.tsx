@@ -34,7 +34,10 @@ const AccountVerification = () => {
     }
   }, []);
 
-  const handleSubmit = async ({ resetForm }: any) => {
+  const handleSubmit = async (
+    _: AccountVerificationFormValues,
+    { resetForm }: any
+  ) => {
     try {
       Toastify.success("Account activated successfully");
       resetForm();

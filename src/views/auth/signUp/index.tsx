@@ -26,7 +26,7 @@ const SignUp = () => {
     }
   };
 
-  const handleSubmit = async ({ resetForm }: any) => {
+  const handleSubmit = async (_: RegisterFormValues, { resetForm }: any) => {
     try {
       Toastify.success("Form registration Successful");
       resetForm();
@@ -139,7 +139,7 @@ const SignUp = () => {
             <Button
               className={`!h-0 !py-0 !px-0 ${
                 check ? "!text-primary100" : "!text-dark"
-              } !pl-1`}
+              } !pl-1 !text-sm`}
               onClick={() => setCheck(!check)}
             >
               "Start Application"
