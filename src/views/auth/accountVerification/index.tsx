@@ -108,11 +108,11 @@ const AccountVerification = () => {
           <div className="mt-7 flex items-center gap-2">
             <Typography
               type="p"
-              children="Didn't receive a code? Check you spam folder"
+              children="Didn't receive a code? Check you spam folder or"
               className="text-dark"
             />
             <Button
-              className="bg-transparent hover:bg-transparent !text-primary100 !px-1 !py-0 !h-0"
+              className="bg-transparent hover:bg-transparent !text-primary100 !px-0 !py-0 !h-0"
               onClick={() => handlePasswordResend(email)}
             >
               <Typography

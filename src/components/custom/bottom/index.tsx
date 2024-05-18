@@ -5,7 +5,7 @@ import Typography from "../typography";
 const Bottom = () => {
   return (
     <div className="border-t-[1px] border-gray-50 text-dark">
-      <div className="pt-8 md:pt-20 flex justify-between flex-col">
+      <div className="pt-8 md:pt-20 flex justify-between flex-col max-w-[90%] xl:max-w-[1300px] mx-auto">
         <Typography
           type="p"
           className="w-[90%]"

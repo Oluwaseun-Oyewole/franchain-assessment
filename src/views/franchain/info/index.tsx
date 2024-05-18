@@ -7,14 +7,14 @@ import { useNavigate } from "react-router-dom";
 const Information = () => {
   const navigate = useNavigate();
   return (
-    <div className="pb-32 mt-6 md:my-10 lg:max-w-[90%] flex flex-col justify-center lg:flex-row items-center lg:justify-between gap-10 lg:gap-0">
+    <div className="pb-28 lg:pb-32 mt-6 md:my-12 lg:max-w-[90%] flex flex-col justify-center lg:flex-row items-center lg:justify-between gap-10 lg:gap-0">
       <div>
         <div className="flex items-center justify-center lg:justify-start">
           <Typography
             children="Franchain has helped us collect royalties locally and internationally in a way we never thought was possible"
             type="h1"
             weight="medium"
-            className="w-[80%] lg:w-[60%] text-sm text-center lg:text-left md:text-xl lg:!text-2xl text-dark"
+            className="w-[80%] xl:w-[60%] text-sm text-center lg:text-left md:text-xl xl:!text-2xl text-dark"
           />
         </div>
         <Button
@@ -30,7 +30,7 @@ const Information = () => {
       <img
         src={Miller}
         alt="miller"
-        className="w-[200px] md:w-[300px] lg:w-[400px]"
+        className="w-[200px] md:w-[300px] xl:w-[400px]"
       />
       <Button
         type="submit"

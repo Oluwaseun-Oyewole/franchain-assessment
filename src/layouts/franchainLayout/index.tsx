@@ -15,16 +15,16 @@ const FranchainLayout = () => {
     <React.Fragment>
       <main className="h-screen bg-light overflow-y-scroll">
         <div className="max-w-[90%] xl:max-w-[1300px] mx-auto">
-          <header className="h-[15vh] sticky top-0 left-0 bg-transparent z-10">
+          <header className="sticky top-0 left-0 bg-light z-10 h-[15vh]">
             <Navigation showBg={false} />
           </header>
-          <div className="w-full flex h-[85vh] overflow-y-scroll">
+          <div className="w-full flex  overflow-y-scroll">
             <div className="w-full h-[100%] bg-light">
               <Outlet />
-              <Bottom />
             </div>
           </div>
         </div>
+        <Bottom />
 
         {getTitleEnum === "goals" && (
           <div className="md:hidden flex justify-center items-center pb-5 bg-[#EEEEF5]">
