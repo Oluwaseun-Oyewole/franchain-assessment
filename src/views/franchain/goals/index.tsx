@@ -7,7 +7,8 @@ import GlassImage from "../../../assets/glass.svg";
 
 const FranchainGoals = () => {
   const navigate = useNavigate();
-  const skeleton = new Array(8).fill("_");
+  const payments = new Array(8).fill("_");
+
   return (
     <div className="mb-14 md:mb-32">
       <div className="sticky top-0 left-0 bg-light text-center py-8">
@@ -26,10 +27,10 @@ const FranchainGoals = () => {
       </div>
 
       <div className="md:mt-10 hidden md:grid grid-flows-col gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center">
-        {skeleton?.map((_, index) => {
+        {payments?.map((_, index) => {
           return (
             <div
-              className="bg-white flex justify-center gap-4 items-center h-[150px] rounded-lg border-[1px] border-gray"
+              className="bg-white flex justify-center gap-4 items-center h-[150px] rounded-lg border-[1px] border-gray hover:border-primary100 cursor-pointer hover:shadow-lg transition-all ease-in-out duration-500"
               key={index}
             >
               <img src={GlassImage} alt="glass image" className="w-[50px]" />
@@ -37,7 +38,8 @@ const FranchainGoals = () => {
                 <Typography
                   type="p"
                   children="Reduced failed payments"
-                  className="w-[70%]"
+                  className="w-[70%] text-dark"
+                  weight="medium"
                 />
                 <CheckBoxInput
                   name="experience"
@@ -54,7 +56,7 @@ const FranchainGoals = () => {
       </div>
 
       <div className="block md:hidden w-full">
-        {skeleton?.map((_, index) => {
+        {payments?.map((_, index) => {
           return (
             <div className="py-6 border-b-[1px] border-gray-50" key={index}>
               <div
@@ -83,7 +85,7 @@ const FranchainGoals = () => {
       <div className="hidden md:flex justify-center items-center">
         <Button
           type="submit"
-          className="!mt-10"
+          className="!mt-14"
           onClick={() => navigate(Routes.franchainInfo)}
         >
           Continue

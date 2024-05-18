@@ -28,7 +28,7 @@ const SignUp = () => {
 
   const handleSubmit = async (_: RegisterFormValues, { resetForm }: any) => {
     try {
-      Toastify.success("Form registration Successful");
+      Toastify.success("An Otp code has been sent to your mail");
       resetForm();
       navigate(Routes.accountVerification);
     } catch (error) {
