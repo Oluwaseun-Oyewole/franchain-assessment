@@ -6,7 +6,7 @@ const GetStarted = () => {
       <img
         src={DashboardImage}
         alt="dashboard image"
-        className="w-[250px] xl:w-[290px]"
+        className="w-[250px] xl:w-[280px]"
       />
       <div className="flex flex-col gap-3">
         <div>
