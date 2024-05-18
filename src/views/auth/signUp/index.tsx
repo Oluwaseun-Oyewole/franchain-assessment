@@ -47,7 +47,7 @@ const SignUp = () => {
           type="h1"
           weight="medium"
           variant="displayXs"
-          className="md:mt-[180px] lg:mt-[200px]"
+          className="md:mt-[180px] lg:mt-[200px] xl:mt-[100px]"
         />
         <Typography
           children="Create an account in 5 minutes"
