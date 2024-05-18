@@ -23,3 +23,20 @@ export const AuthLinks: AuthTitle = {
   info: Routes.dashboard,
   goals: Routes.dashboard,
 };
+
+export interface PaymentInterface {
+  id: number;
+  label: string;
+  checked: boolean;
+}
+
+export const allPayments: PaymentInterface[] = [
+  { id: 1, label: "Reduce failed payment", checked: false },
+  { id: 2, label: "Reduce failed payment", checked: false },
+  { id: 3, label: "Reduce failed payment", checked: false },
+  { id: 4, label: "Reduce failed payment", checked: false },
+  { id: 5, label: "Reduce failed payment", checked: false },
+  { id: 6, label: "Reduce failed payment", checked: false },
+  { id: 7, label: "Reduce failed payment", checked: false },
+  { id: 8, label: "Reduce failed payment", checked: false },
+];

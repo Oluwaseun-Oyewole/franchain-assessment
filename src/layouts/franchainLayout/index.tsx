@@ -1,6 +1,7 @@
 import Bottom from "@/components/custom/bottom";
 import Navigation from "@/components/custom/nav";
 import { Button } from "@/components/ui/button";
+import { usePaymentContext } from "@/context";
 import { Routes } from "@/routes/routes";
 import React from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
@@ -10,6 +11,12 @@ const FranchainLayout = () => {
   const getTitle = location.pathname.split("/");
   const getTitleEnum = getTitle[getTitle.length - 1];
   const navigate = useNavigate();
+  const { payments } = usePaymentContext();
+
+  const handleClick = () => {
+    localStorage.setItem("allPayments", JSON.stringify(payments));
+    navigate(Routes.franchainInfo);
+  };
 
   return (
     <React.Fragment>
@@ -31,7 +38,7 @@ const FranchainLayout = () => {
             <Button
               type="submit"
               className="!mt-10 !h-16 text-lg !w-[90%]"
-              onClick={() => navigate(Routes.franchainInfo)}
+              onClick={handleClick}
             >
               Continue
             </Button>

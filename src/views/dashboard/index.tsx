@@ -14,7 +14,14 @@ const Dashboard = () => {
         variant="displayXs"
       />
 
-      <Button className="mt-3" onClick={() => navigate(Routes.login)}>
+      <Button
+        className="mt-3"
+        onClick={() => {
+          navigate(Routes.login);
+          localStorage.removeItem("allPayments");
+          localStorage.removeItem("email");
+        }}
+      >
         Logout
       </Button>
     </div>
