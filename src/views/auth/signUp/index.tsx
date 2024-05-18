@@ -37,14 +37,13 @@ const SignUp = () => {
   };
 
   return (
-    <div className="mt-6 md:mt-0 md:mb-32 h-full w-full lg:max-w-[85%] mx-auto flex flex-col items-start md:justify-center overflow-y-scroll scroll-smooth">
-      <div>
+    <div className="mt-6 md:mt-0 md:mb-32 h-full w-full lg:max-w-[85%] mx-auto flex flex-col items-start md:justify-center scroll-smooth">
+      <div className="md:mt-16 lg:mt-0">
         <Typography
           children="Get started with Franchain"
           type="h1"
           weight="medium"
           variant="displayXs"
-          className="md:mt-[180px] lg:mt-[200px] xl:mt-[100px]"
         />
         <Typography
           children="Create an account in 5 minutes"
@@ -54,7 +53,7 @@ const SignUp = () => {
         />
       </div>
 
-      <div className="w-full py-4">
+      <div className="w-full py-4 overflow-y-scroll">
         <Formik
           initialValues={{
             firstName: "",

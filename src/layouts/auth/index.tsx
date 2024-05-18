@@ -10,7 +10,7 @@ const AuthLayout = () => {
           <Navigation />
         </header>
         <div className="w-full flex items-center justify-center h-[85vh] max-w-[90%] md:max-w-[70%] xl:max-w-[1300px] mx-auto">
-          <div className="w-full bg-primary h-full hidden lg:block">
+          <div className="w-full bg-primary h-full hidden lg:block bg-gradient-to-br from-[#DFEAF0] from-60% to-red-50">
             <GetStarted />
           </div>
           <div className="w-full h-full bg-light">

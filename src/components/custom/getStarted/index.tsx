@@ -2,11 +2,11 @@ import DashboardImage from "@/assets/sign-up.svg";
 import Typography from "../typography";
 const GetStarted = () => {
   return (
-    <div className="flex items-center justify-center flex-col text-center h-full gap-5">
+    <div className="flex items-center justify-center flex-col text-center h-full gap-5 w-full">
       <img
         src={DashboardImage}
         alt="dashboard image"
-        className="w-[250px] xl:w-[280px]"
+        className="w-[250px] xl:w-[280px] object-cover"
       />
       <div className="flex flex-col gap-3">
         <div>
