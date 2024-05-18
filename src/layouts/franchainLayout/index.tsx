@@ -12,6 +12,7 @@ const FranchainLayout = () => {
   const getTitleEnum = getTitle[getTitle.length - 1];
   const navigate = useNavigate();
   const { payments } = usePaymentContext();
+  const isPaymentChecked = payments?.some((payment) => payment.checked);
 
   const handleClick = () => {
     localStorage.setItem("allPayments", JSON.stringify(payments));
@@ -36,6 +37,7 @@ const FranchainLayout = () => {
         {getTitleEnum === "goals" && (
           <div className="md:hidden flex justify-center items-center pb-5 bg-[#EEEEF5]">
             <Button
+              disabled={!isPaymentChecked}
               type="submit"
               className="!mt-10 !h-16 text-lg !w-[90%]"
               onClick={handleClick}
