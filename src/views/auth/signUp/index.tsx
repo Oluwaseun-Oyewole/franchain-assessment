@@ -146,7 +146,7 @@ const SignUp = () => {
             </Button>
             , I agree to Mercury's
             <a
-              className="underline"
+              className="underline mr-1"
               href="https://mercury.com/legal/terms"
               target="_blank"
               rel="noopener noreferrer"
@@ -156,7 +156,7 @@ const SignUp = () => {
             and to receive electronic communication about my accounts and
             services per{" "}
             <a
-              className="underline"
+              className="underline mr-1"
               href="https://mercury.com/legal/esign"
               target="_blank"
               rel="noopener noreferrer"
