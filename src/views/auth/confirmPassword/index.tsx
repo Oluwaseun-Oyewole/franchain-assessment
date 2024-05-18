@@ -20,7 +20,7 @@ const ConfirmPassword = () => {
   }, []);
 
   return (
-    <div className="mt-6 xl:mt-0 xl:mb-32 bg-light h-full w-full max-w-[85%] mx-auto flex flex-col items-start md:justify-center">
+    <div className="mt-6 xl:mt-0 xl:mb-32 lg:max-w-[85%] mx-auto bg-light h-full w-full flex flex-col items-start md:justify-center">
       <Typography
         type="h1"
         children="Check your email"

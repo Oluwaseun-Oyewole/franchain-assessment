@@ -52,7 +52,7 @@ const AccountVerification = () => {
   };
 
   return (
-    <div className="mt-6 md:mt-0 md:mb-32 bg-light h-full w-full max-w-[85%] mx-auto flex flex-col items-start md:justify-center">
+    <div className="mt-6 md:mt-0 md:mb-32 bg-light h-full w-full lg:max-w-[85%] mx-auto flex flex-col items-start md:justify-center">
       <div>
         <Typography
           type="h1"
@@ -68,6 +68,8 @@ const AccountVerification = () => {
             }}
             validate={validateForm}
             onSubmit={handleSubmit}
+            validateOnChange
+            validateOnMount
           >
             {(formik) => {
               return (

@@ -49,7 +49,7 @@ const PasswordReset = () => {
   };
 
   return (
-    <div className="mt-6 md:mt-0 md:mb-32 bg-light h-full w-full max-w-[85%] mx-auto flex flex-col items-start md:justify-center">
+    <div className="mt-6 md:mt-0 md:mb-32 lg:max-w-[85%] mx-auto bg-light h-full w-full flex flex-col items-start md:justify-center">
       <Typography
         children="Reset Password"
         type="h1"
@@ -71,6 +71,8 @@ const PasswordReset = () => {
           }}
           validate={validateForm}
           onSubmit={handleSubmit}
+          validateOnChange
+          validateOnMount
         >
           {(formik) => {
             return (

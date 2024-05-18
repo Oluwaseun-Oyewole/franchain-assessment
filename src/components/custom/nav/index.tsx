@@ -22,7 +22,7 @@ const Navigation = ({ showBg = true }: INav) => {
   };
 
   return (
-    <nav className="flex justify-between h-[100%]">
+    <nav className="flex justify-between h-[100%] ">
       <div
         className={`bg-light ${
           showBg && "lg:bg-primary"

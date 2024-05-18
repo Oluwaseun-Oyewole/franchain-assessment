@@ -23,14 +23,14 @@ const Login = () => {
   const handleSubmit = async (values: LoginFormValues, { resetForm }: any) => {
     try {
       resetForm();
-      navigate(Routes.franchainGoals);
+      navigate(Routes.dashboard);
     } catch (error) {
       return;
     }
   };
 
   return (
-    <div className="mt-6 md:mt-0 md:mb-32 bg-light h-full w-full max-w-[85%] mx-auto flex flex-col items-start md:justify-center">
+    <div className="mt-6 md:mt-0 md:mb-32 bg-light h-full w-full lg:max-w-[85%] mx-auto flex flex-col items-start md:justify-center">
       <Typography
         children="Login to Franchain"
         type="h1"

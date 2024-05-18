@@ -9,11 +9,13 @@ import {
 import { Routes } from "@/routes/routes";
 import { Toastify } from "@/utils/toasts";
 import { Form, Formik } from "formik";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ZodError } from "zod";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const [check, setCheck] = useState(false);
   const validateForm = (values: RegisterFormValues) => {
     try {
       registerValidationSchema.parse(values);
@@ -38,13 +40,14 @@ const SignUp = () => {
   };
 
   return (
-    <div className="mb-32 bg-light h-full w-full max-w-[85%] mx-auto overflow-y-scroll scroll-smooth ">
-      <div className="sticky top-0 left-0 bg-light">
+    <div className="mt-6 md:mt-0 md:mb-32 h-full w-full lg:max-w-[85%] mx-auto flex flex-col items-start md:justify-center overflow-y-scroll scroll-smooth">
+      <div>
         <Typography
           children="Get started with Franchain"
           type="h1"
           weight="medium"
           variant="displayXs"
+          className="md:mt-[180px] lg:mt-[200px]"
         />
         <Typography
           children="Create an account in 5 minutes"
@@ -121,7 +124,7 @@ const SignUp = () => {
                 />
 
                 <Button
-                  disabled={!formik.isValid}
+                  disabled={!formik.isValid || !check}
                   className="mt-5"
                   type="submit"
                 >
@@ -135,7 +138,16 @@ const SignUp = () => {
 
         <div>
           <p className="text-xs leading-5 lg:text-sm py-8 text-dark">
-            By clicking "Start Application", I agree to Mercury's{" "}
+            By clicking
+            <Button
+              className={`!h-0 !py-0 !px-0 ${
+                check ? "!text-primary100" : "!text-dark"
+              } !pl-1`}
+              onClick={() => setCheck(!check)}
+            >
+              "Start Application"
+            </Button>
+            , I agree to Mercury's
             <a
               className="underline"
               href="https://mercury.com/legal/terms"
