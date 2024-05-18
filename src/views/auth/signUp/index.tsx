@@ -26,10 +26,7 @@ const SignUp = () => {
     }
   };
 
-  const handleSubmit = async (
-    values: RegisterFormValues,
-    { resetForm }: any
-  ) => {
+  const handleSubmit = async ({ resetForm }: any) => {
     try {
       Toastify.success("Form registration Successful");
       resetForm();
