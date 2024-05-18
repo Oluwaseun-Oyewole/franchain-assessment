@@ -34,15 +34,17 @@ const FranchainGoals = () => {
           weight="medium"
           variant="displayXs"
         />
-        <Typography
-          children="No wrong answers here. And it doesn't matter if you change your mind later"
-          type="p"
-          className="py-3 text-dark"
-          weight="regular"
-        />
+        <div className="flex items-center justify-center">
+          <Typography
+            children="No wrong answers here. And it doesn't matter if you change your mind later"
+            type="p"
+            className="py-3 text-dark w-[75%] md:w-full"
+            weight="regular"
+          />
+        </div>
       </div>
 
-      <div className="md:mt-10 hidden md:grid grid-flows-col gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center">
+      <div className="md:mt-6 hidden md:grid grid-flows-col gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center">
         {payments?.map((payment, index) => {
           return (
             <div
